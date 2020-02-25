@@ -1,15 +1,23 @@
-import React from "react"
+/* eslint-disable no-undef */
+import React, { Component } from "react"
 
-export const WeatherQuery = () => {
-  return (
-    <div className='weather-query'>    
-    
-      <form>
-        <input type="text" value="" placeholder="" />
-        <button type="search"></button>
-      </form>
-    </div>
-  )
+export default class WeatherQuery extends Component {
+  state = {
+    inputVal: ""
+  }
+  render(props) {
+    return (
+      <div>
+        <h1>WeatherApp</h1>
+        <input
+          onChange={event =>this.props.handlChange(event)}
+          name="text"
+          type="text"
+          placeholder=""
+          value={this.state.inputVal}
+        />
+        <button onClick={this.props.handleSearch}>Search</button>
+      </div>
+    )
+  }
 }
-
-export default WeatherQuery;
