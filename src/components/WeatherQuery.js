@@ -2,21 +2,30 @@
 import React, { Component } from "react"
 
 export default class WeatherQuery extends Component {
-  state = {
-    inputVal: ""
-  }
   render(props) {
     return (
-      <div>
+      <div className="container">
         <h1>WeatherApp</h1>
-        <input
-          onChange={event =>this.props.handlChange(event)}
-          name="text"
-          type="text"
-          placeholder=""
-          value={this.state.inputVal}
-        />
-        <button onClick={this.props.handleSearch}>Search</button>
+        <form onSubmit={this.props.goGetWeather}>
+          <input
+            className="city-input"
+            name="city"
+            type="text"
+            placeholder="City"
+          />
+          <hr/>
+          <br />
+          <input
+            className="country-input"
+            name="country"
+            type="text"
+            placeholder="Country"
+          />
+          <hr/>
+          <br />
+          <button className="btn btn-info">Get Weather </button>
+          <hr/>
+        </form>
       </div>
     )
   }

@@ -2,64 +2,53 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from "react"
 import "./App.css"
-import WeatherQuery from "./components/WeatherQuery"
 import Weather from "./components/Weather"
+import WeatherQuery from "./components/WeatherQuery"
+import "./index.css"
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
-
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      city: "",
-      icon: "",
-      main: "",
-      description: "",
-      inputVal: ""
-    }
-    this.weatherIcon = {
-      Drizzle: "wi-sleet",
-      Rain: "wi-storm-showers",
-      Snow: "wi-snow",
-      Atmosphere: "wi-fog",
-      Clear: "wi-day-sunny",
-      Clouds: "wi-day-fog"
-    }
+  state = {
+    city: undefined,
+    country: undefined,
+    temperature: undefined,
+    description: undefined,
+    error: undefined
   }
 
-  handleSearch = () => {
-    getWeatherData(this.state.inputVal) //(call getWeatherData function from below)
-  }
-  componentDidMount() {
-    let getWeatherData = inputVal => {
-      fetch(
-        "https://api.weatherbit.io/v2.0/current?city=Seattle,WA&key=168c5cb818e74abd926a9d65d285d48f"
-      )
-        .then(res => res.json())
-        .then(data => {
-          this.setState({
-            city: `${response.name}`,
-            main: response.weather[0].main,
-            description: response.weather[0].description
-          })
-          console.log(data)
-        })
-    }
-  }
+  goGetWeather = async e => {
+    e.preventDefault()
+    const city = e.target.elements.city.value
+    const country = e.target.elements.country.value
+    const api_call = await fetch(
+      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=8004ed6a9e53c30dd054d079fff7f24e&units=metric`
+    )
+    const data = await api_call.json()
+    console.log(data)
 
-  //handleChange from WeatherQuery input:
-  handleOnChange = e => {
-    this.setState({ inputVal: e.target.value })
+    if (city && country) {
+      this.setState({
+        temperature: data.main.temp,
+        name: data.name,
+        country: data.sys.country,
+        humidity: data.main.humidity,
+        description: data.weather[0].description,
+        error: ""
+      })
+    }
   }
 
   render() {
     return (
-      <div className="container">
-        <WeatherQuery
-          handleChange={this.state.handleChange}
-          handleSearch={this.state.handleSearch}
+      <div className="bg">
+        <WeatherQuery goGetWeather={this.goGetWeather} />
+
+        <Weather
+          city={this.state.city}
+          country={this.state.country}
+          description={this.state.description}
         />
-        <Weather />
+        <br />
       </div>
     )
   }
