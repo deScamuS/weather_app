@@ -13,13 +13,6 @@ class Weather2 extends Component {
             <h2>{this.props.temp}</h2>
             <p>{this.props.description}</p>
           </div>
-
-          <br />
-          <div className="flip-card-back">
-            <p>{this.props.temp}</p>
-
-            <p>{this.props.description}</p>
-          </div>
         </div>
       </div>
     )
