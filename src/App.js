@@ -28,9 +28,10 @@ class App extends Component {
 
     if (city && country) {
       this.setState({
-        temperature: data.main.temp,
+        city: data.city,
+       country: data.sys.country,
         name: data.name,
-        country: data.sys.country,
+       temperature: data.main.temperature,
         humidity: data.main.humidity,
         description: data.weather[0].description,
         error: ""
@@ -38,15 +39,21 @@ class App extends Component {
     }
   }
 
-  render() {
+
+  render(props) {
     return (
       <div className="bg">
         <WeatherQuery goGetWeather={this.goGetWeather} />
-
+        <br />
+        <br />
+        <p></p>
         <Weather
           city={this.state.city}
           country={this.state.country}
+          temperature={this.state.temperature}
           description={this.state.description}
+          humidity={this.state.humidity}
+          error={this.state.error}
         />
         <br />
       </div>

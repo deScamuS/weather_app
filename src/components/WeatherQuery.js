@@ -23,7 +23,7 @@ export default class WeatherQuery extends Component {
           />
           <hr/>
           <br />
-          <button className="btn btn-info">Get Weather </button>
+          <button onClick={this.props.displayWeather} className="btn btn-info">Get Weather</button>
           <hr/>
         </form>
       </div>
