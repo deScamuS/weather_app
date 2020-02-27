@@ -6,7 +6,7 @@ import Weather from "./components/Weather"
 import WeatherQuery from "./components/WeatherQuery"
 import "./index.css"
 
-const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
+const API_KEY = "8004ed6a9e53c30dd054d079fff7f24e"
 class App extends Component {
   state = {
     city: undefined,
