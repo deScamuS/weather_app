@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from "react"
 import "./App.css"
-import Weather2 from "./components/Weather2"
+import Weather from "./components/Weather"
 import WeatherQuery from "./components/WeatherQuery"
 import "./index.css"
 
@@ -51,7 +51,7 @@ class App extends Component {
         <br />
         <br />
         <p></p>
-        <Weather2
+        <Weather
           city={this.state.city}
           country={this.state.country}
           temp={this.state.temp}

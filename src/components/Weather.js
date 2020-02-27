@@ -1,45 +1,22 @@
-import React from "react"
-import {
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCol,
-  MDBContainer
-} from "mdbreact"
-
-export const Weather = props => {
-  return (
-    <div>
-      <MDBContainer>
-        <MDBCol>
-          <div className="center">
-            <MDBCard
-              style={{
-                width: "22rem",
-                background: "rgb(255,255,255,.009)",
-                color: "#000"
-              }}
-            >
-              <MDBCardImage className="img-fluid" src={""} alt="" />
-              <MDBCardBody>
-                <MDBCardTitle>
-                  {" "}
-                  {props.city} {props.country}
-                </MDBCardTitle>
-
-                <MDBCardText></MDBCardText>
-                <MDBCardText>{props.temperature}</MDBCardText>
-                <MDBCardText>{props.description}</MDBCardText>
-                <MDBCardText>{props.humidity}</MDBCardText>
-              </MDBCardBody>
-            </MDBCard>
+import React, { Component } from "react"
+import "./Weather.css"
+class Weather extends Component {
+  render() {
+    return (
+      <div className="card">
+        <div className="card-inner">
+          <div className="front">
+            <h1>
+              {" "}
+              {this.props.city} {this.props.country}{" "}
+            </h1>
+            <h2>{this.props.temp}</h2>
+            <p>{this.props.description}</p>
           </div>
-        </MDBCol>
-      </MDBContainer>
-    </div>
-  )
+        </div>
+      </div>
+    )
+  }
 }
 
 export default Weather
