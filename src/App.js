@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from "react"
 import "./App.css"
-import Weather from "./components/Weather"
+import Weather2 from "./components/Weather2"
 import WeatherQuery from "./components/WeatherQuery"
 import "./index.css"
 
@@ -11,34 +11,38 @@ class App extends Component {
   state = {
     city: undefined,
     country: undefined,
-    temperature: undefined,
+    temp: undefined,
     description: undefined,
     error: undefined
   }
 
+  weatherIcon = () => {}
+
   goGetWeather = async e => {
     e.preventDefault()
+
+    const kelvinToFahrenheit = require("kelvin-to-fahrenheit")
+    kelvinToFahrenheit(300)
+
     const city = e.target.elements.city.value
     const country = e.target.elements.country.value
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=8004ed6a9e53c30dd054d079fff7f24e&units=metric`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=imperial`
     )
     const data = await api_call.json()
     console.log(data)
 
     if (city && country) {
       this.setState({
-        city: data.city,
-       country: data.sys.country,
-        name: data.name,
-       temperature: data.main.temperature,
-        humidity: data.main.humidity,
+        city: data.name,
+        country: data.sys.country,
+        temp: data.main.temp,
         description: data.weather[0].description,
+        humidity: data.main.humidity,
         error: ""
       })
     }
   }
-
 
   render(props) {
     return (
@@ -47,13 +51,14 @@ class App extends Component {
         <br />
         <br />
         <p></p>
-        <Weather
+        <Weather2
           city={this.state.city}
           country={this.state.country}
-          temperature={this.state.temperature}
+          temp={this.state.temp}
           description={this.state.description}
           humidity={this.state.humidity}
           error={this.state.error}
+          weatherIcon={this.state.weatherIcon}
         />
         <br />
       </div>

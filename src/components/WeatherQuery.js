@@ -5,15 +5,15 @@ export default class WeatherQuery extends Component {
   render(props) {
     return (
       <div className="container">
-        <h1>WeatherApp</h1>
+        <h1> WeatherApp</h1>
         <form onSubmit={this.props.goGetWeather}>
           <input
             className="city-input"
             name="city"
             type="text"
             placeholder="City"
-          />
-          <hr/>
+          />  
+          <br/>
           <br />
           <input
             className="country-input"
@@ -21,10 +21,10 @@ export default class WeatherQuery extends Component {
             type="text"
             placeholder="Country"
           />
-          <hr/>
+          <br/>
           <br />
-          <button onClick={this.props.displayWeather} className="btn btn-info">Get Weather</button>
-          <hr/>
+          <button onClick={this.props.displayWeather} className="btn btn-mdb">Get Weather</button>
+          <br/>
         </form>
       </div>
     )

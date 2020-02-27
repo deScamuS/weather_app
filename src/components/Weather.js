@@ -11,21 +11,34 @@ import {
 
 export const Weather = props => {
   return (
-    <MDBContainer>
-      <MDBCol>
-        <MDBCard style={{ width: "22rem" }}>
-          <MDBCardImage className="img-fluid" src="" waves />
-          <MDBCardBody>
-            <MDBCardTitle>{props.city}</MDBCardTitle>
+    <div>
+      <MDBContainer>
+        <MDBCol>
+          <div className="center">
+            <MDBCard
+              style={{
+                width: "22rem",
+                background: "rgb(255,255,255,.009)",
+                color: "#000"
+              }}
+            >
+              <MDBCardImage className="img-fluid" src={""} alt="" />
+              <MDBCardBody>
+                <MDBCardTitle>
+                  {" "}
+                  {props.city} {props.country}
+                </MDBCardTitle>
 
-            <MDBCardText>{props.country}</MDBCardText>
-            <MDBCardText>{props.temperature}</MDBCardText>
-            <MDBCardText>{props.description}</MDBCardText>
-            <MDBCardText>{props.humidity}</MDBCardText>
-          </MDBCardBody>
-        </MDBCard>
-      </MDBCol>
-    </MDBContainer>
+                <MDBCardText></MDBCardText>
+                <MDBCardText>{props.temperature}</MDBCardText>
+                <MDBCardText>{props.description}</MDBCardText>
+                <MDBCardText>{props.humidity}</MDBCardText>
+              </MDBCardBody>
+            </MDBCard>
+          </div>
+        </MDBCol>
+      </MDBContainer>
+    </div>
   )
 }
 
