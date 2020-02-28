@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 -- simple search (city, country) weather app calling open weather API \_ async/await...
+-- Added tiny bit of mdbreact...
 
 ## Available Scripts
 

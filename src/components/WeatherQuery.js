@@ -28,7 +28,6 @@ export default class WeatherQuery extends Component {
           <button onClick={this.props.displayWeather} className="btn btn-mdb">
             Get Weather
           </button>
-          <br />
         </form>
       </div>
     )

@@ -49,7 +49,12 @@ class App extends Component {
         <WeatherQuery goGetWeather={this.goGetWeather} />
         <br />
         <br />
-        <p></p>
+        <p>
+          <a href="https://github.com/deScamuS/weather_app" alt="">
+            <i class="fab fa-github"></i>
+          </a>
+        </p>
+
         <Weather
           city={this.state.city}
           country={this.state.country}
@@ -59,7 +64,6 @@ class App extends Component {
           error={this.state.error}
           icon={this.state.icon}
         />
-        <br />
       </div>
     )
   }
