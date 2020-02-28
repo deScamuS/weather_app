@@ -14,14 +14,13 @@ class App extends Component {
     temp: undefined,
     description: undefined,
     error: undefined,
-    icon: undefined
+    wind: undefined
   }
 
   weatherIcon = () => {}
 
   goGetWeather = async e => {
     e.preventDefault()
-
     const city = e.target.elements.city.value
     const country = e.target.elements.country.value
     const api_call = await fetch(
@@ -37,18 +36,25 @@ class App extends Component {
         temp: data.main.temp,
         description: data.weather[0].description,
         humidity: data.main.humidity,
-        icon: data.weather.icon,
-        error: ""
+        wind: data.wind
       })
     } else {
-        alert("Enter Correct Values.")
+      alert("Enter Correct Values.")
     }
   }
-
+  clearFields = e => {
+    this.setState({
+      city: "",
+      country: ""
+    })
+  }
   render(props) {
     return (
       <div className="bg">
-        <WeatherQuery goGetWeather={this.goGetWeather} />
+        <WeatherQuery
+          goGetWeather={this.goGetWeather}
+          clearFields={this.clearFields}
+        />
         <br />
         <br />
         <p>
@@ -64,7 +70,7 @@ class App extends Component {
           description={this.state.description}
           humidity={this.state.humidity}
           error={this.state.error}
-          icon={this.state.icon}
+          wind={this.state.wind}
         />
       </div>
     )

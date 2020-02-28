@@ -15,6 +15,7 @@ class Weather extends Component {
               <h2>{this.props.temp}</h2>
               <h2>{this.props.humidity}</h2>
               <p>{this.props.description}</p>
+              <p>{this.props.wind}</p>
               <p>{this.props.error} </p>
             </div>
           </div>
