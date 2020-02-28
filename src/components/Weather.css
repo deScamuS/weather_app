@@ -4,10 +4,10 @@
   height: 100px;
   perspective: 1000px;
   display: flex;
-  justify-content: center;
+  justify-content: center;;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: auto;  
   font-family: "Lato", sans-serif;
 }
 

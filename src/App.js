@@ -34,15 +34,13 @@ class App extends Component {
         city: data.name,
         country: data.sys.country,
         temp: data.main.temp,
-        description: data.weather[0].description,
         humidity: data.main.humidity,
-        wind: data.wind.speed
+        wind: data.wind.speed,
+        description: data.weather[0].description,
+        error: ""
       })
-    } else {
-      alert("Enter Correct Values.")
     }
   }
- 
   render(props) {
     return (
       <div className="bg">
