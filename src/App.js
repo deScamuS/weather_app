@@ -13,16 +13,14 @@ class App extends Component {
     country: undefined,
     temp: undefined,
     description: undefined,
-    error: undefined
+    error: undefined,
+    icon: undefined
   }
 
   weatherIcon = () => {}
 
   goGetWeather = async e => {
     e.preventDefault()
-
-    const kelvinToFahrenheit = require("kelvin-to-fahrenheit")
-    kelvinToFahrenheit(300)
 
     const city = e.target.elements.city.value
     const country = e.target.elements.country.value
@@ -39,6 +37,7 @@ class App extends Component {
         temp: data.main.temp,
         description: data.weather[0].description,
         humidity: data.main.humidity,
+        icon: data.weather.icon,
         error: ""
       })
     }
@@ -58,7 +57,7 @@ class App extends Component {
           description={this.state.description}
           humidity={this.state.humidity}
           error={this.state.error}
-          weatherIcon={this.state.weatherIcon}
+          icon={this.state.icon}
         />
         <br />
       </div>
