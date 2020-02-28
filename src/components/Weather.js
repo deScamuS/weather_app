@@ -3,22 +3,17 @@ import "./Weather.css"
 class Weather extends Component {
   render() {
     return (
-      <div>
-        <div className="card">
-          <div className="card-inner">
-            <div className="front">
-              <h1>
-                {" "}
-                {this.props.city} {this.props.country}{" "}
-              </h1>
-              <h2>{this.props.icon}</h2>
-              <h2>{this.props.temp}</h2>
-              <h2>{this.props.humidity}</h2>
-              <p>{this.props.description}</p>
-              <p>{this.props.wind}</p>
-              <p>{this.props.error} </p>
-            </div>
-          </div>
+      <div className="card">
+        <div className="front">
+          <h2>
+            {this.props.city}
+            {this.props.country}{" "}
+          </h2>
+          Temp | <p>{this.props.temp}</p>
+          Humidity | <p>{this.props.humidity}</p>
+          Description | <p> {this.props.description}</p>
+          Wind | <p> {this.props.wind}</p>
+          <p>{this.props.error} </p>
         </div>
       </div>
     )

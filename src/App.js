@@ -36,18 +36,13 @@ class App extends Component {
         temp: data.main.temp,
         description: data.weather[0].description,
         humidity: data.main.humidity,
-        wind: data.wind
+        wind: data.wind.speed
       })
     } else {
       alert("Enter Correct Values.")
     }
   }
-  clearFields = e => {
-    this.setState({
-      city: "",
-      country: ""
-    })
-  }
+ 
   render(props) {
     return (
       <div className="bg">
