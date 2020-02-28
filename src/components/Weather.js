@@ -9,10 +9,10 @@ class Weather extends Component {
             {this.props.city}
             {this.props.country}{" "}
           </h2>
-          Temp | <p>{this.props.temp}</p>
-          Humidity | <p>{this.props.humidity}</p>
-          Description | <p> {this.props.description}</p>
-          Wind | <p> {this.props.wind}</p>
+          Temp <p>{this.props.temp}</p>
+          Humidity <p>{this.props.humidity}</p>
+          Description <p> {this.props.description}</p>
+          Wind <p> {this.props.wind}</p>
           <p>{this.props.error} </p>
         </div>
       </div>
