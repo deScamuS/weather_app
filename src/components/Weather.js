@@ -5,7 +5,7 @@ class Weather extends Component {
     return (
       <div className="card">
         <div className="front">
-          <h2>
+          <h2>{""}
             {this.props.city}
             {this.props.country}{" "}
           </h2>
