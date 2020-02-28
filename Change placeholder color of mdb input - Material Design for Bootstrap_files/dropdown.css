@@ -1,0 +1,23 @@
+.dropdown-menu>.active {
+    color: #fff!important;
+}
+
+.open>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+.dropdown-menu-left {
+    right: auto;
+    left: 0;
+}
+
+.dropup .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 2px;
+}

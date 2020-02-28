@@ -1,0 +1,178 @@
+/*-------------------------------*/
+/* = base                        */
+/*-------------------------------*/
+
+ol {
+    list-style-position: inside;
+}
+
+ul {
+    list-style: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+blockquote, pre {
+    margin-bottom: 10px;
+    background-color: #eee;
+}
+
+blockquote {
+    padding: 10px 10px 1px 10px;
+    margin: 0;
+}
+
+code {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    overflow: auto;
+}
+
+p code, .comment code {
+    padding: 1px 5px;
+    background-color: #eee;
+}
+
+/* label {
+    font-weight: bold;
+} */
+
+#content pre.prettyprint {
+    padding: 10px;
+    border: none;
+}
+
+#content li.L0, #content li.L1, #content li.L2, #content li.L3, #content li.L4, #content li.L5, #content li.L6, #content li.L7, #content li.L8, #content li.L9 {
+    list-style-type: decimal;
+}
+
+.grippie {
+    background: #EEEEEE url(../img/grippie.png) no-repeat scroll center 2px;
+    margin-top: -2px;
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 0pt 1px 1px;
+    cursor: s-resize;
+    height: 9px;
+    overflow: hidden;
+}
+
+/*-------------------------------*/
+/* = markdown                    */
+/*-------------------------------*/
+
+.wmd-input {
+    resize: none;
+    display:block;
+    width:100%;
+    padding:.375rem .75rem;
+    font-size:1rem;
+    line-height:1.5;
+    color:#495057;
+    border-color: #ccc; 
+    background-color:#fff;
+    background-clip:padding-box;
+    border-radius:.25rem;
+    transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.was-validated .wmd-input.is-valid {
+    border-color:#28a745!important;
+}
+.was-validated .wmd-input.is-valid.is-focused {
+    box-shadow:0 0 0 0.2rem rgba(40,167,69,.25);
+}
+.was-validated .wmd-input.is-invalid {
+    border-color:#dc3545!important;
+}
+.was-validated .wmd-input.is-invalid.is-focused {
+    box-shadow:0 0 0 0.2rem rgba(220,53,69,.25);
+}
+
+.needs-validation .wmd-input.is-valid {
+    border-color:#28a745!important;
+}
+.needs-validation .wmd-input.is-valid.is-focused {
+    box-shadow:0 0 0 0.2rem rgba(40,167,69,.25);
+}
+.needs-validation .wmd-input.is-invalid {
+    border-color:#dc3545!important;
+}
+.needs-validation .wmd-input.is-invalid.is-focused {
+    box-shadow:0 0 0 0.2rem rgba(220,53,69,.25);
+}
+
+.wmd-preview { 
+    padding: 5px;
+    margin: 20px 0;
+    border: 2px dotted #ccc;
+    border-radius:.25rem;
+    width: 688px;
+    max-width: 100%;
+}
+
+.wmd-preview img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wmd-button-row {
+    position: relative; 
+    margin-bottom: 5px;
+    height: 20px;
+}
+
+.wmd-spacer {
+    width: 1px; 
+    height: 20px; 
+    margin-left: 14px;
+    position: absolute;
+    background-color: Silver;
+    display: inline-block; 
+}
+
+.wmd-button {
+    padding-left: 2px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.wmd-button > span {
+    background-image: url(../img/wmd-buttons.png);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.wmd-spacer1 {
+    left: 50px;
+}
+
+.wmd-spacer2 {
+    left: 175px;
+}
+
+.wmd-spacer3 {
+    left: 300px;
+}
+
+.wmd-prompt-background {
+    background-color: Black;
+}
+
+.wmd-prompt-dialog {
+    border: 1px solid #999999;
+    background-color: #F5F5F5;
+}
+
+.wmd-prompt-dialog > form > input[type="button"]{
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.popover {
+    z-index: 1049!important;
+}

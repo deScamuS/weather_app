@@ -40,6 +40,8 @@ class App extends Component {
         icon: data.weather.icon,
         error: ""
       })
+    } else {
+        alert("Enter Correct Values.")
     }
   }
 

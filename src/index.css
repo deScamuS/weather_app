@@ -5,10 +5,12 @@ html {
   font-weight: 300;
 }
 .bg {
+  min-height: 100%;
   background-image: url("https://mdbootstrap.com/img/Photos/Others/images/94.jpg");
   height: 100vh;
-  opacity: 0.98;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(216, 220, 230, 0.596);
 }

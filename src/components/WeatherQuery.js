@@ -2,13 +2,19 @@
 import React, { Component } from "react"
 import { MDBInput } from "mdbreact"
 
+
 export default class WeatherQuery extends Component {
-  render(props) {
+
+
+
+ render(props) {
+ 
     return (
       <div className="container">
         <h1> WeatherApp</h1>
         <form onSubmit={this.props.goGetWeather}>
           <MDBInput
+            id="in"
             label="City"
             className="city-input"
             name="city"
@@ -17,6 +23,7 @@ export default class WeatherQuery extends Component {
           />
 
           <MDBInput
+            id="in"
             label="Country"
             className="country-input"
             name="country"
