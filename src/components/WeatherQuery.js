@@ -6,7 +6,7 @@ export default class WeatherQuery extends Component {
   render(props) {
     return (
       <div className="container">
-        <h1> weather </h1>
+        <h1></h1>
         <form onSubmit={this.props.goGetWeather}>
           <MDBInput
             label="City"
